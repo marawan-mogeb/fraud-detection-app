@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FraudGuard — Project Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="top-bar">
+  <div class="top-brand">Fraud<span>Guard</span></div>
+  <div class="slide-counter" id="slideCounter">1 / 12</div>
+</div>
+
+<nav class="nav-dots">
+  <button class="nav-dot active"><span class="tip">Home</span></button>
+  <button class="nav-dot"><span class="tip">Business Value</span></button>
+  <button class="nav-dot"><span class="tip">Problem</span></button>
+  <button class="nav-dot"><span class="tip">Dataset</span></button>
+  <button class="nav-dot"><span class="tip">Feature Engineering</span></button>
+  <button class="nav-dot"><span class="tip">Model</span></button>
+  <button class="nav-dot"><span class="tip">Risk Levels</span></button>
+  <button class="nav-dot"><span class="tip">Results</span></button>
+  <button class="nav-dot"><span class="tip">Pipeline</span></button>
+  <button class="nav-dot"><span class="tip">API</span></button>
+  <button class="nav-dot"><span class="tip">Lessons Learned</span></button>
+  <button class="nav-dot"><span class="tip">Team</span></button>
+</nav>
+
+<div class="key-hint">
+  <kbd>&darr;</kbd> <kbd>&uarr;</kbd> or <kbd>Space</kbd> to navigate
+</div>
+
+
+<!-- ═══════════════════════ SLIDE 0 — HERO ═══════════════════════ -->
+<section class="slide">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="slide-inner">
+    <div class="reveal hero-badge"><span class="dot"></span> Deep Learning Project</div>
+    <h1 class="reveal reveal-delay-1 hero-title">
+      Real-Time<br><span class="gradient">Fraud Detection</span>
+    </h1>
+    <p class="reveal reveal-delay-2 hero-sub">
+      A production-ready deep learning system that detects fraudulent financial
+      transactions in real time using a Residual Neural Network trained on
+      6.3 million+ transactions.
+    </p>
+    <div class="reveal reveal-delay-3 hero-tags">
+      <span class="hero-tag">PyTorch</span>
+      <span class="hero-tag">Flask</span>
+      <span class="hero-tag">ResidualNet</span>
+      <span class="hero-tag">Focal Loss</span>
+      <span class="hero-tag">16 Features</span>
+      <span class="hero-tag">REST API</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 1 — BUSINESS VALUE ═════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">01 — Business Value</div>
+    <h2 class="reveal reveal-delay-1 section-title">Why This Matters</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Fraud detection directly protects revenue, builds customer trust,
+      and meets regulatory requirements.
+    </p>
+    <div class="card-grid">
+      <div class="reveal reveal-delay-2 info-card">
+        <div class="ic-icon ic-green">&#x1F4B0;</div>
+        <h3>Revenue Protection</h3>
+        <p>Block fraudulent transactions before funds leave, saving millions in chargebacks and losses.</p>
+      </div>
+      <div class="reveal reveal-delay-3 info-card">
+        <div class="ic-icon ic-blue">&#x1F91D;</div>
+        <h3>Customer Trust</h3>
+        <p>Real-time fraud alerts show the institution has customers' backs. Trust drives retention.</p>
+      </div>
+      <div class="reveal reveal-delay-4 info-card">
+        <div class="ic-icon ic-purple">&#x2696;&#xFE0F;</div>
+        <h3>Regulatory Compliance</h3>
+        <p>Active fraud monitoring with full audit trails and feature transparency per prediction.</p>
+      </div>
+      <div class="reveal reveal-delay-5 info-card">
+        <div class="ic-icon ic-orange">&#x26A1;</div>
+        <h3>Operational Efficiency</h3>
+        <p>Replace manual review with intelligent prioritization &mdash; analysts focus only on flagged cases.</p>
+      </div>
+      <div class="reveal reveal-delay-5 info-card">
+        <div class="ic-icon ic-cyan">&#x1F4C9;</div>
+        <h3>Fewer False Positives</h3>
+        <p>Focal Loss dramatically reduces false alarms compared to rule-based systems.</p>
+      </div>
+      <div class="reveal reveal-delay-5 info-card">
+        <div class="ic-icon ic-red">&#x1F6E1;&#xFE0F;</div>
+        <h3>Scalable Defense</h3>
+        <p>Simple API handles millions of transactions. Deploy on CPU or GPU, scale horizontally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 2 — THE PROBLEM ════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">02 — The Problem</div>
+    <h2 class="reveal reveal-delay-1 section-title">Challenges We Solve</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Traditional rule-based systems miss sophisticated fraud.
+      Deep learning catches patterns humans can't see.
+    </p>
+    <div class="card-grid">
+      <div class="reveal reveal-delay-2 info-card">
+        <div class="ic-icon ic-red">&#x1F4B8;</div>
+        <h3>$32B+ Annual Losses</h3>
+        <p>Global digital payment fraud keeps escalating, making ML-powered detection critical.</p>
+      </div>
+      <div class="reveal reveal-delay-3 info-card">
+        <div class="ic-icon ic-orange">&#x23F1;&#xFE0F;</div>
+        <h3>Real-Time Demands</h3>
+        <p>Transactions must be classified in milliseconds. Delayed detection = completed fraud.</p>
+      </div>
+      <div class="reveal reveal-delay-4 info-card">
+        <div class="ic-icon ic-purple">&#x1F3AD;</div>
+        <h3>Evolving Tactics</h3>
+        <p>Fraudsters adapt constantly. Deep learning generalizes to novel patterns rule engines miss.</p>
+      </div>
+      <div class="reveal reveal-delay-5 info-card">
+        <div class="ic-icon ic-blue">&#x1F4CA;</div>
+        <h3>Extreme Imbalance</h3>
+        <p>Only 0.129% of transactions are fraud. Standard classifiers fail &mdash; we use Focal Loss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 3 — DATASET ════════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">03 — The Dataset</div>
+    <h2 class="reveal reveal-delay-1 section-title">PaySim: 6.3M+ Transactions</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      A synthetic dataset simulating real mobile money transactions
+      from an African financial service over 30 days.
+    </p>
+
+    <div class="reveal reveal-delay-2 stat-row" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+      <div class="stat-box">
+        <div class="sb-val" data-count="6354407" data-suffix="" data-decimals="0">0</div>
+        <div class="sb-label">Legit Transactions</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-val" style="color:var(--danger);" data-count="8213" data-decimals="0">0</div>
+        <div class="sb-label">Fraud Cases</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-val" style="color:var(--purple);">0.129%</div>
+        <div class="sb-label">Fraud Rate</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-val" data-count="5" data-decimals="0">0</div>
+        <div class="sb-label">Transaction Types</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-val" data-count="744" data-decimals="0">0</div>
+        <div class="sb-label">Simulation Hours</div>
+      </div>
+    </div>
+
+    <!-- Class imbalance chart -->
+    <div class="reveal reveal-delay-3 fig-frame invert">
+      <img src="img/output.png" alt="Class imbalance — bar chart and pie chart"/>
+      <div class="fig-caption">Severe class imbalance: 99.871% legitimate vs 0.129% fraud</div>
+    </div>
+
+    <!-- Fraud by type + Amount distribution -->
+    <div class="reveal reveal-delay-4 fig-grid" style="margin-top:18px;">
+      <div class="fig-frame invert">
+        <img src="img/output1.png" alt="Transaction volume and fraud rate by type"/>
+        <div class="fig-caption">Fraud only in TRANSFER (0.77%) and CASH_OUT (0.18%)</div>
+      </div>
+      <div class="fig-frame invert">
+        <img src="img/output2.png" alt="Amount distribution raw and log scale"/>
+        <div class="fig-caption">Fraud amounts skew higher on log scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 4 — FEATURE ENGINEERING ════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">04 — Feature Engineering</div>
+    <h2 class="reveal reveal-delay-1 section-title">8 Raw + 8 Engineered = 16 Features</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Raw fields are transformed into powerful fraud signals: balance anomalies,
+      drain ratios, and transaction type indicators.
+    </p>
+    <div class="reveal reveal-delay-3" style="overflow-x:auto;">
+      <table class="feat-table">
+        <thead>
+          <tr><th>Feature</th><th>Description</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="fname">step</td><td class="fdesc">Hour of simulation (1&ndash;744)</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">type_enc</td><td class="fdesc">Integer encoding of transaction type (0&ndash;4)</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">amount</td><td class="fdesc">Transaction amount</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">oldbalanceOrg</td><td class="fdesc">Sender's opening balance</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">newbalanceOrig</td><td class="fdesc">Sender's closing balance</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">oldbalanceDest</td><td class="fdesc">Receiver's opening balance</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">newbalanceDest</td><td class="fdesc">Receiver's closing balance</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">isFlaggedFraud</td><td class="fdesc">System rule flag (catches &lt;0.3% fraud)</td><td><span class="fbadge badge-raw">raw</span></td></tr>
+          <tr><td class="fname">diffbalanceOrig</td><td class="fdesc">newbalanceOrig &minus; oldbalanceOrg</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">diffbalanceDest</td><td class="fdesc">newbalanceDest &minus; oldbalanceDest</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">errorBalanceOrig</td><td class="fdesc">|newOrig + amount &minus; oldOrig| (accounting gap)</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">errorBalanceDest</td><td class="fdesc">|oldDest + amount &minus; newDest| (accounting gap)</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">amount_ratio_orig</td><td class="fdesc">amount / (oldbalanceOrg + 1) &mdash; drain ratio</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">orig_balance_zeroed</td><td class="fdesc">1 if account drained to zero</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">dest_is_merchant</td><td class="fdesc">1 if destination starts with &ldquo;M&rdquo;</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+          <tr><td class="fname">is_risky_type</td><td class="fdesc">1 if CASH_OUT or TRANSFER</td><td><span class="fbadge badge-eng">derived</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 5 — THE MODEL ══════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">05 — The Model</div>
+    <h2 class="reveal reveal-delay-1 section-title">Residual Neural Network</h2>
+    <p class="reveal reveal-delay-2 section-sub" style="text-align:center; max-width:100%;">
+      10 linear layers &middot; 3 skip-connected residual blocks &middot; 256 hidden dim &middot; Focal Loss &middot; AdamW + OneCycleLR
+    </p>
+    <div class="reveal reveal-delay-3 arch-diagram-wrap">
+      <img class="arch-diagram-img" src="img/Screenshot_1.png" alt="FraudDetectionNet architecture diagram"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 7 — RISK LEVELS ════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">06 — Risk Classification</div>
+    <h2 class="reveal reveal-delay-1 section-title">Four-Tier Risk System</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Beyond binary fraud/legit &mdash; graduated risk tiers for real-world response strategies.
+    </p>
+    <div class="reveal reveal-delay-3 risk-row">
+      <div class="risk-card risk-critical">
+        <h4>CRITICAL</h4>
+        <p>Probability &ge; 75%<br>Immediate block &amp; review</p>
+      </div>
+      <div class="risk-card risk-high">
+        <h4>HIGH</h4>
+        <p>Probability 50&ndash;74%<br>Flag for manual review</p>
+      </div>
+      <div class="risk-card risk-medium">
+        <h4>MEDIUM</h4>
+        <p>Probability 25&ndash;49%<br>Enhanced monitoring</p>
+      </div>
+      <div class="risk-card risk-low">
+        <h4>LOW</h4>
+        <p>Probability &lt; 25%<br>Normal processing</p>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-4 card-grid" style="margin-top:36px;">
+      <div class="info-card">
+        <div class="ic-icon ic-orange">&#x1F3AF;</div>
+        <h3>Optimized Threshold</h3>
+        <p>Tuned on validation data to maximize PR-AUC, not accuracy.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon ic-purple">&#x1F4CA;</div>
+        <h3>Confidence Scoring</h3>
+        <p>High / Medium / Low based on distance from threshold.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon ic-green">&#x1F52C;</div>
+        <h3>Feature Transparency</h3>
+        <p>All 16 features returned per prediction for audit trails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 7 — RESULTS ════════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">07 — Results</div>
+    <h2 class="reveal reveal-delay-1 section-title">What We Achieved</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Strong performance on a highly imbalanced dataset, benchmarked against
+      XGBoost, LightGBM, Random Forest, and more.
+    </p>
+
+    <div class="reveal reveal-delay-2 stat-row" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="result-card">
+        <div class="rc-val rc-safe">0.9984</div>
+        <div class="rc-label">XGBoost PR-AUC</div>
+        <div class="rc-desc">Best traditional model</div>
+      </div>
+      <div class="result-card">
+        <div class="rc-val rc-accent">0.9978</div>
+        <div class="rc-label">cuML RF PR-AUC</div>
+        <div class="rc-desc">GPU Random Forest</div>
+      </div>
+      <div class="result-card">
+        <div class="rc-val rc-purple">0.9986</div>
+        <div class="rc-label">LightGBM PR-AUC</div>
+        <div class="rc-desc">Gradient Boosting</div>
+      </div>
+      <div class="result-card">
+        <div class="rc-val rc-cyan">&lt;50ms</div>
+        <div class="rc-label">Inference Latency</div>
+        <div class="rc-desc">Per transaction (CPU)</div>
+      </div>
+    </div>
+
+    <!-- Training history -->
+    <div class="reveal reveal-delay-3 fig-frame invert">
+      <img src="img/output4.png" alt="Training history: Focal Loss, ROC-AUC, PR-AUC"/>
+      <div class="fig-caption">Deep Learning Training &mdash; Focal Loss converges, PR-AUC &gt; 0.98</div>
+    </div>
+
+    <!-- ROC + PR curves -->
+    <div class="reveal reveal-delay-4 fig-frame invert" style="margin-top:18px;">
+      <img src="img/output5.png" alt="ROC and Precision-Recall curves for all models"/>
+      <div class="fig-caption">Model Comparison &mdash; ROC Curves (left) and Precision-Recall Curves (right)</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 9 — PIPELINE ════════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">08 — End-to-End Pipeline</div>
+    <h2 class="reveal reveal-delay-1 section-title">From Transaction to perdict</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      One API call handles feature engineering, scaling, and inference automatically.
+    </p>
+    <div class="reveal reveal-delay-3 arch-flow">
+      <div class="arch-node">
+        <div class="an-icon">&#x1F4E8;</div>
+        <div class="an-title">Raw Transaction</div>
+        <div class="an-sub">JSON / Form Input</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-node">
+        <div class="an-icon">&#x1F527;</div>
+        <div class="an-title">Feature Engine</div>
+        <div class="an-sub">16 Engineered Features</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-node">
+        <div class="an-icon">&#x1F4D0;</div>
+        <div class="an-title">Scaler</div>
+        <div class="an-sub">StandardScaler (saved)</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-node">
+        <div class="an-icon">&#x1F9E0;</div>
+        <div class="an-title">ResidualNet</div>
+        <div class="an-sub">3&times; ResBlocks + Head</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-node">
+        <div class="an-icon">&#x1F3AF;</div>
+        <div class="an-title">Perdict</div>
+        <div class="an-sub">Fraud / Legit + Risk</div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-4 card-grid" style="margin-top:36px;">
+      <div class="info-card">
+        <div class="ic-icon ic-green">&#x1F310;</div>
+        <h3>Flask Backend</h3>
+        <p>Lightweight Python web server with REST endpoints for prediction, health checks, and model metadata.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon ic-cyan">&#x1F3A8;</div>
+        <h3>Interactive UI</h3>
+        <p>Dark-themed dashboard with quick-test cases, real-time gauges, and feature visualization.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon ic-orange">&#x1F4E6;</div>
+        <h3>Portable Checkpoint</h3>
+        <p>Single .pt file: model weights, scaler params, threshold, and feature names &mdash; zero train/serve skew.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 9 — API ═════════════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">09 — REST API</div>
+    <h2 class="reveal reveal-delay-1 section-title">Simple Integration</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Four endpoints. Send a transaction, get a perdict. Production-ready with Gunicorn.
+    </p>
+    <div class="reveal reveal-delay-3 api-grid">
+      <div class="api-card">
+        <div class="api-card-head">
+          <span class="api-method method-post">POST</span>
+          <span class="api-path">/predict</span>
+        </div>
+        <div class="api-card-body">JSON inference. Returns fraud probability, risk level, confidence, all features.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-head">
+          <span class="api-method method-post">POST</span>
+          <span class="api-path">/predict-form</span>
+        </div>
+        <div class="api-card-body">Form-based endpoint for demo UI. Same JSON response.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-head">
+          <span class="api-method method-get">GET</span>
+          <span class="api-path">/health</span>
+        </div>
+        <div class="api-card-body">Health check. Model status, device info (CPU/GPU).</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-head">
+          <span class="api-method method-get">GET</span>
+          <span class="api-path">/model-info</span>
+        </div>
+        <div class="api-card-body">Metadata: threshold, PR-AUC, feature names, count.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 10 — LESSONS LEARNED ═══════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">10 — Lessons Learned &amp; Key Takeaways</div>
+    <h2 class="reveal reveal-delay-1 section-title">Key Takeaways</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      Critical lessons about real-world ML engineering that go beyond textbook knowledge.
+    </p>
+    <div style="display:grid; gap:16px;">
+      <div class="reveal reveal-delay-2 lesson-card">
+        <div class="lesson-num">01</div>
+        <div>
+          <h3>Class Imbalance is the Real Enemy</h3>
+          <p>Standard cross-entropy gives &gt;99% accuracy catching zero fraud. Focal Loss + PR-AUC were essential. Accuracy is a trap.</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-3 lesson-card">
+        <div class="lesson-num">02</div>
+        <div>
+          <h3>Feature Engineering Beats Model Complexity</h3>
+          <p>errorBalanceOrig and amount_ratio_orig carried more signal than raw inputs. 8 derived features dramatically boosted detection.</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-4 lesson-card">
+        <div class="lesson-num">03</div>
+        <div>
+          <h3>Residual Connections Help Tabular Data Too</h3>
+          <p>Skip connections prevented gradient degradation and outperformed plain feed-forward architectures.</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-5 lesson-card">
+        <div class="lesson-num">04</div>
+        <div>
+          <h3>Threshold Selection is a Product Decision</h3>
+          <p>Optimal threshold depends on business cost trade-offs. We tuned it on the PR curve, not fixed at 0.5.</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-5 lesson-card">
+        <div class="lesson-num">05</div>
+        <div>
+          <h3>Package the Whole Pipeline</h3>
+          <p>Saving scaler + features + threshold in one checkpoint eliminated train/serve skew entirely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ SLIDE 11 — TEAM ══════════════════════════ -->
+<section class="slide">
+  <div class="slide-inner">
+    <div class="reveal section-label">11 — The Team</div>
+    <h2 class="reveal reveal-delay-1 section-title">Built By</h2>
+    <p class="reveal reveal-delay-2 section-sub">
+      This project was designed and developed by the following team members.
+    </p>
+    <div class="team-grid">
+      <div class="reveal reveal-delay-1 team-card">
+        <div class="team-avatar"><div class="av-inner">MM</div></div>
+        <div class="team-name">Marawan Mogeb</div>
+        <span class="team-id">120220174</span>
+      </div>
+      <div class="reveal reveal-delay-2 team-card">
+        <div class="team-avatar"><div class="av-inner">AH</div></div>
+        <div class="team-name">Ahmed Hesham</div>
+        <span class="team-id">120220142</span>
+      </div>
+      <div class="reveal reveal-delay-3 team-card">
+        <div class="team-avatar"><div class="av-inner">AK</div></div>
+        <div class="team-name">Amr Khaled</div>
+        <span class="team-id">120220236</span>
+      </div>
+      <div class="reveal reveal-delay-4 team-card">
+        <div class="team-avatar"><div class="av-inner">MY</div></div>
+        <div class="team-name">Mohammed Yehia</div>
+        <span class="team-id">120220227</span>
+      </div>
+      <div class="reveal reveal-delay-5 team-card">
+        <div class="team-avatar"><div class="av-inner">AM</div></div>
+        <div class="team-name">Abdelrahman Mahmoud</div>
+        <span class="team-id">120220009</span>
+      </div>
+    </div>
+    <div class="pres-footer" style="margin-top:60px;">
+      <p style="font-size:18px; color:var(--text); margin-bottom:6px; font-family:var(--head); font-weight:700;">Thank you!</p>
+      <p><span>FraudGuard</span> &mdash; Real-Time Fraud Detection with Deep Learning</p>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
